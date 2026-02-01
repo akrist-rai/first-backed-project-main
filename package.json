@@ -1,0 +1,33 @@
+{
+  "name": "url-shortener",
+  "version": "1.0.0",
+  "description": "URL Shortener API with Bun and full DevOps pipeline",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "bun --watch src/index.ts",
+    "start": "bun src/index.ts",
+    "test": "bun test",
+    "test:watch": "bun test --watch",
+    "db:migrate": "bun run scripts/migrate.ts",
+    "db:seed": "bun run scripts/seed.ts",
+    "verify": "bun run scripts/verify-setup.ts",
+    "build": "bun build src/index.ts --outdir dist --target bun",
+    "lint": "echo 'Add your linter here'",
+    "docker:build": "docker build -t url-shortener .",
+    "docker:run": "docker-compose up"
+  },
+  "keywords": ["bun", "devops", "url-shortener", "api"],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "jsonwebtoken": "^9.0.2"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/jsonwebtoken": "^9.0.5",
+    "@types/node": "^20.11.0",
+    "bun-types": "latest"
+  }
+}

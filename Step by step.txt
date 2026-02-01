@@ -1,0 +1,48 @@
+🔍 Step-by-step
+
+1. Open src/index.ts
+→ See where middleware is added
+→ Which order? Middleware order matters.
+
+2. Open src/routes.ts
+→ See which middleware runs on which route
+→ Are some routes public, some protected?
+
+3. Inspect src/middleware/*
+→ Read each file
+→ Ask: What properties does each add to req or res?
+
+4. Look at controllers
+→ These are your final handlers
+→ How do they expect req.user, req.body, etc.?
+
+5. Check tests
+→ Tests tell you what behavior is expected
+
+
+
+🧠 What to Focus On for Maximum Learning
+📌 Order of middleware
+
+Middleware is invoked in the sequence you register it. This affects output.
+📌 Request object evolution
+
+Track how req changes:
+
+req.method, req.url
+  ↓
+req.headers
+  ↓
+req.body (after parser)
+  ↓
+req.user (after auth)
+
+📌 Error propagation
+
+How does middleware signal errors?
+Try making requests that fail validation.
+📌 Route protection
+
+Which endpoints require auth?
+How are protected routes configured?
+

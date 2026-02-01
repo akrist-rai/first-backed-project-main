@@ -1,0 +1,9 @@
+[install]
+# Configure package installation
+registry = "https://registry.npmjs.org/"
+production = false
+
+[test]
+# Test configuration
+preload = ["./tests/setup.ts"]
+coverage = true
