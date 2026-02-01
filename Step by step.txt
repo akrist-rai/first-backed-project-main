@@ -1,4 +1,4 @@
-🔍 Step-by-step
+🔍 Step-by-ste
 
 1. Open src/index.ts
 → See where middleware is added
